@@ -12,7 +12,8 @@ class PageController extends Controller
         $page = Page::where('slug', $slug)
             ->where('is_published', true)
             ->with(['sections' => fn ($q) => $q->where('is_visible', true)->with('items')])
-            ->firstOrFail();
+            ->firstOrFail()
+        ;
 
         return view('pages.show', compact('page'));
     }

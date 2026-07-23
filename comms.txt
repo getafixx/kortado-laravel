@@ -1,0 +1,124 @@
+Install NPM
+sail mysql < mysql-nts-db.sql 
+sail mysql < ../db-dumps/mysql-nts-db.sql
+
+sudo apt update
+sudo apt install nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm install stable
+source ~/.bashrc
+nvm install stable
+npm install laravel-mix --save-dev
+
+npm run dev
+npm run prod
+
+php artisan migrate:fresh
+php artisan db:seed
+php artisan make:filament-user
+php artisan storage:link
+php artisan optimize
+
+
+php artisan cache:clear
+php artisan config:clear
+php artisan optimize:clear
+php artisan route:clear
+php artisan view:clear
+
+
+php artisan debugbar:clear
+php artisan event:clear
+php artisan icons:clear
+
+
+php artisan queue:clear
+
+php artisan schedule:clear-cache
+php artisan view:clear          
+
+sail artisan migrate:fresh
+sail artisan db:seed
+sail artisan make:filament-user
+sail artisan storage:link
+sail artisan optimize
+sail artisan nts:su-get-transactions
+sail artisan nts:su-get-transactions-details
+
+
+./vendor/bin/sail artisan storage:link
+./vendor/bin/sail artisan optimize
+
+UPDATE product_batch_variations SET `b2b_price` = `b2b_price` * 100;
+
+
+# modal interface
+./vendor/bin/sail artisan make:filament-resource ProductCategories --simple --generate 
+
+sail composer dumpautoload
+# full interface
+./vendor/bin/sail artisan make:filament-resource Product --generate
+./vendor/bin/sail artisan make:filament-page Settings
+
+
+./vendor/bin/sail artisan make:filament-resource ProductBatches --generate
+
+./vendor/bin/sail artisan make:filament-resource MeasurementUnits --generate
+./vendor/bin/sail artisan make:filament-resource Ingredient --generate
+./vendor/bin/sail artisan make:filament-resource Ingredient --generate
+./vendor/bin/sail artisan make:filament-resource SumupTransactionOverview --generate
+
+art make:model -m -f -s MeasurementUnits
+
+./createModelRepo.sh NutritionAttrib
+./createModelRepo.sh Nutrition 
+./createModelRepo.sh Nutrition 
+
+
+create seeded data and code
+art migrate --path=database/migrations/2024_01_14_124356_create_measurement_units_table.php 
+
+art db:seed --class=ProductsSeeder
+art db:seed --class=IngredientSeeder
+art db:seed --class=MeasurementUnitsSeeder
+art db:seed --class=NutritionAttribSeeder
+
+
+
+to add a plugin
+AdminPanelProvider
+
+in  the sail shell 
+
+Interest::firstOrCreate([
+        'hobby' => implode(',', $request->hobby),    
+        'language' => $request->input('language'),
+        'language1' => $request->input('language1'),
+        'marital_status' => $request->input('marital_status'),
+        'children' => $request->input('children'),
+        'user_id' => $user_id,
+    ]);
+
+$flight = App\Flight::updateOrCreate(
+    ['departure' => 'Oakland', 'destination' => 'San Diego'],
+    ['price' => 99]
+);
+
+migrate --path=./database/migrations/2024_04_02_124455_create_recipes_table.php
+
+./vendor/bin/sail artisan make:filament-resource Ingredient --generate
+
+
+./createModelRepo.sh Companies 
+./createModelRepo.sh Invoices
+./createModelRepo.sh InvoiceItems
+./createModelRepo.sh Nutrition 
+
+
+./vendor/bin/sail artisan make:filament-resource Company --generate
+
+
+./vendor/bin/sail artisan make:filament-resource Company --generate
+
+
+export PHP_CS_FIXER_IGNORE_ENV

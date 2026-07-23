@@ -39,10 +39,10 @@ class Section extends Model
 
     /**
      * The Blade component view for this section's type.
-     * e.g. type "feature_grid" -> components.sections.feature-grid
+     * e.g. type "feature_grid" -> components.sections.feature-grid.
      */
     public function componentView(): string
     {
-        return 'components.sections.' . str_replace('_', '-', $this->type);
+        return 'components.sections.'.str_replace('_', '-', $this->type);
     }
 }
